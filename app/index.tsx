@@ -1,8 +1,22 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
+
+  const itens = [
+    'All',
+    'Mixes',
+    'Music',
+    'Movies',
+    'Live',
+    'Gaming',
+    'News',
+    'Sports',
+    'Learning',
+    'Fashion & Beauty',
+  ]
+
   return (
-    <>
+    <View style={{ flex: 1, backgroundColor: '#fff' }}>
       <View style={sytles.topContainer}>
         <Image source={require('../assets/images/logo.png')} />
         <View style={{ flexDirection: 'row', gap: 5 }}>
@@ -13,14 +27,23 @@ export default function Index() {
         </View>
       </View>
       <View style={sytles.categoriesContainer}>
-        <Text>Explore</Text>
-        <Text> | </Text>
-        <Text>All</Text>
-        <Text>Mixes</Text>
-        <Text>Music</Text>
-        <Text>Movies</Text>
+        <View style={sytles.itemExploreView}>
+            <Image source={require('../assets/images/explore_icon.png')} />
+            <Text style={{fontWeight: '600'}}>Explorar</Text>
+          </View>
+        
+        <FlatList
+          data={itens}
+          horizontal
+          renderItem={({ item }) => (
+            <View style={sytles.itemView}>
+              <Text>{item}</Text>
+            </View>
+          )}
+          keyExtractor={(item) => item}
+        />
       </View>
-    </>
+    </View>
   );
 }
 
@@ -38,8 +61,27 @@ const sytles = StyleSheet.create({
   categoriesContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
+    gap: 5,
     marginHorizontal: 10,
     paddingVertical: 10,
+  },
+  itemView:{
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 20,
+    marginLeft: 5,
+    backgroundColor: '#ECECEC',
+    borderColor: '#CECECE',
+    borderWidth: 1,
+  },
+  itemExploreView:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+    borderRadius: 5,
+    backgroundColor: '#ECECEC',
+    borderColor: '#CECECE',
   }
 });
