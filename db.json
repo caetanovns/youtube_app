@@ -1,0 +1,71 @@
+{
+  "$schema": "./node_modules/json-server/schema.json",
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "playlist": [
+    {
+      "id": "1",
+      "title": "Video 1",
+      "thumbnail": "https://via.placeholder.com/150",
+      "views": 1000,
+      "date": "2024-06-01",
+      "publisher": "Channel A"
+    },
+    {
+      "id": "2",
+      "title": "Video 2",
+      "thumbnail": "https://via.placeholder.com/150",
+      "views": 2000,
+      "publisher": "Channel B"
+    },
+    {
+      "id": "3",
+      "title": "Video 3",
+      "thumbnail": "https://via.placeholder.com/150",
+      "views": 3000,
+      "date": "2024-06-03",
+      "publisher": "Channel C"
+    },
+    {
+      "id": "4",
+      "title": "Video 4",
+      "thumbnail": "https://via.placeholder.com/150",
+      "views": 4000,
+      "date": "2024-06-05",
+      "publisher": "Channel D"
+    },
+    {
+      "id": "5",
+      "title": "Video 5",
+      "thumbnail": "https://via.placeholder.com/150",
+      "views": 5000,
+      "date": "2024-06-07",
+      "publisher": "Channel E"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
